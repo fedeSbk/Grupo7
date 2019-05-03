@@ -15,6 +15,7 @@
             <li><a href="../../index.php">Home</a></li>
             <li><a href="login/logIn.php">Iniciar Sesion</a></li>
             <li><a href="login/singIn.php">Registrarse</a></li>
+            <li><a href="../Index.php">Atras</a></li>
           </ul>
         </div>
       </div>

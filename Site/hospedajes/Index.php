@@ -20,6 +20,7 @@
         </div>
       </div>
       <div id="condenido">
+        <h2> Listado de Hospedajes </h2>
         <table border="1">
           <tr>
               <th>Id</th>
