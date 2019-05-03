@@ -20,6 +20,36 @@
         </div>
       </div>
       <div id="condenido">
+        <table border="1">
+          <tr>
+              <th>Id</th>
+              <th>Imagen</th>
+              <th>Titulo</th>
+              <th>Ver Detalles</th>
+              <th>Eliminar</th>
+          </tr>
+          <tr>
+              <td>01</td>
+              <td>Imagen</td>
+              <td>Hospedaje 1</td>
+              <td><button type="button">Ver Detalles</button></td>
+              <td><button type="button">Eliminar</button></td>
+          </tr>
+          <tr>
+              <td>02</td>
+              <td>Imagen</td>
+              <td>Hospedaje 2</td>
+              <td><button type="button">Ver Detalles</button></td>
+              <td><button type="button">Eliminar</button></td>
+          </tr>
+          <tr>
+              <td>03</td>
+              <td>Imagen</td>
+              <td>Hospedaje 3</td>
+              <td><button type="button">Ver Detalles</button></td>
+              <td><button type="button">Eliminar</button></td>
+          </tr>
+       </table>
       </div>
       <div id="pie">
         <p> Desarrollado por <strong>FAA</strong> - 2019 - copyrigth</p>
