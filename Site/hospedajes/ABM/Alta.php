@@ -21,16 +21,32 @@
       </div>
       <div id="condenido">
         <h2> Nuevo Hospedaje </h2>
-        <form action="services/ServicesAlta.php" method="post">
-            Ingrese Titulo:<input type="text" name="titulo" <?php if (isset($_POST['titulo'])){echo "value='".$_POST['titulo']."'";};?> required />
+        <form enctype="multipart/form-data" action="services/ServicesAlta.php" method="post">
+            Ingrese Titulo
             <br />
-            Ingrese Imagen Principal (Luego podra agregar la galeria de imagenes del hospedaje o dejarlo en blanco):<input type="file" name="imagen"/>
+            <input type="text" name="titulo" <?php if (isset($_POST['titulo'])){echo "value='".$_POST['titulo']."'";};?> required />
             <br />
-            Ingrese descripcion:
+            Ingrese descripcion
             <br />
             <textarea rows="4" cols="50" name="descripcion" required><?php if (isset($_POST['titulo'])){echo $_POST['descripcion'];};?></textarea>
             <br />
-            Ingrese cantidad de semanas disponibles: <input type="number" id="semanas" name="semanas" <?php if (isset($_POST['titulo'])){echo "value='".$_POST['semanas']."'";};?> required />
+            Ingrese precio
+            <br />
+            <input type="text" name="precio" <?php if (isset($_POST['precio'])){echo "value='".$_POST['precio']."'";};?> required />
+            <br />
+            Ingrese Imagen (opcional):
+            <br />
+            <input type="file" name="imagen"/>
+            <br />
+            Ingrese cantidad de Personas:
+            <br />
+            <input type="text" name="cantPersonas" <?php if (isset($_POST['cantPersonas'])){echo "value='".$_POST['cantPersonas']."'";};?> required />
+            <br />
+            Ingrese Fecha de Inicio de Subasta (opcional):
+            <br />
+            <input type="date" name="fechaSubasta" <?php if (isset($_POST['fechaSubasta'])){echo "value='".$_POST['fechaSubasta']."'";};?> />
+            <br />
+            Ingrese cantidad de semanas disponibles (opcional): <input type="number" id="semanas" name="semanas" <?php if (isset($_POST['titulo'])){echo "value='".$_POST['semanas']."'";};?> />
             <button type="button" class="Semanas">Agregar Semanas</button>
             <div id="sem"></div>
             <script >

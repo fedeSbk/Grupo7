@@ -29,27 +29,27 @@
               <th>Ver Detalles</th>
               <th>Eliminar</th>
           </tr>
-          <tr>
-              <td>01</td>
-              <td>Imagen</td>
-              <td>Hospedaje 1</td>
-              <td><button type="button">Ver Detalles</button></td>
-              <td><button type="button">Eliminar</button></td>
-          </tr>
-          <tr>
-              <td>02</td>
-              <td>Imagen</td>
-              <td>Hospedaje 2</td>
-              <td><button type="button">Ver Detalles</button></td>
-              <td><button type="button">Eliminar</button></td>
-          </tr>
-          <tr>
-              <td>03</td>
-              <td>Imagen</td>
-              <td>Hospedaje 3</td>
-              <td><button type="button">Ver Detalles</button></td>
-              <td><button type="button">Eliminar</button></td>
-          </tr>
+          <?php
+          if  (isset($_GET['exito'])){
+          ?> <div id="exito">
+            <label>El hospedaje se agrego con <strong>éxito</strong></label>
+            </div> <?php
+          }
+          require_once("controlador/dbConfig.php");
+          $sql = "SELECT * FROM hospedaje";
+          $resultado = mysqli_query($con,$sql);
+          while ($rows = mysqli_fetch_array($resultado)){
+            $name=str_replace('/opt/lampp/htdocs/HomeSwitchHome/Grupo7/Site','',$rows['imagenData']);
+              ?>
+              <tr>
+                <td><?php echo $rows['idHospedaje'];?></td>
+                <td><?php echo '<img src="..'.$name.'" alt="Imagen'.$rows['titulo'].'" width="150" height="150" />
+';?></td>
+                <td><?php echo $rows['titulo'];?></td>
+              </tr>
+          <?php
+          }
+           ?>
        </table>
       </div>
       <div id="pie">
