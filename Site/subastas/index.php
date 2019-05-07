@@ -13,10 +13,8 @@
         <div id="menu">
           <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="login/logIn.php">Iniciar Sesion</a></li>
-            <li><a href="login/singIn.php">Registrarse</a></li>
-            <li><a href="hospedajes/Index.php">Gestion Hospedajes</a></li>
-	    <li><a href="subastas/index.php">Subastas</a></li>
+            <li><a href="nueva_subasta.php">crear subasta</a></li>
+            <li><a href="lista_subastas.php">lista de subastas</a></li>
           </ul>
         </div>
       </div>
