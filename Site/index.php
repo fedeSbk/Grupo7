@@ -16,6 +16,7 @@
             <li><a href="login/logIn.php">Iniciar Sesion</a></li>
             <li><a href="login/singIn.php">Registrarse</a></li>
             <li><a href="hospedajes/Index.php">Gestion Hospedajes</a></li>
+	    <li><a href="subastas/index.php">Subastas</a></li>
           </ul>
         </div>
       </div>
