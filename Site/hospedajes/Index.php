@@ -26,6 +26,7 @@
               <th>Id</th>
               <th>Imagen</th>
               <th>Titulo</th>
+              <th>Precio</th>
               <th>Ver Detalles</th>
               <th>Eliminar</th>
           </tr>
@@ -39,13 +40,20 @@
           $sql = "SELECT * FROM hospedaje";
           $resultado = mysqli_query($con,$sql);
           while ($rows = mysqli_fetch_array($resultado)){
-            $name=str_replace('/opt/lampp/htdocs/HomeSwitchHome/Grupo7/Site','',$rows['imagenData']);
+            if (strpos($rows['imagenData'],'opt')!== false){
+            $name=str_replace('/opt/lampp/htdocs/HomeSwitchHome/Grupo7/Site','',$rows['imagenData']);  
+            }
+            else{
+            $name=str_replace('C:/xampp2/htdocs/Grupo7-Final/Grupo7/Site','',$rows['imagenData']);
+             }
               ?>
               <tr>
                 <td><?php echo $rows['idHospedaje'];?></td>
-                <td><?php echo '<img src="..'.$name.'" alt="Imagen'.$rows['titulo'].'" width="150" height="150" />
-';?></td>
+                <td><?php echo '<img src="..'.$name.'" alt="Imagen'.$rows['titulo'].'" width="150" height="150" />';?></td>
                 <td><?php echo $rows['titulo'];?></td>
+                <td><?php echo $rows['precio'];?></td>
+                <td><?php echo $rows['descripcion'];?></td>
+                <td></td>
               </tr>
           <?php
           }
