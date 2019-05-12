@@ -2,6 +2,7 @@
 require_once ("../../controlador/dbConfig.php");
 $imageProperties = getimageSize($_FILES['imagen']['tmp_name']);
 $type = $imageProperties['mime'];
+$type = str_replace('image/', '', $type);
 $sql = "INSERT INTO hospedaje ( titulo, descripcion, precio, imagenType, cantidadPersonas, cantidadSemanasDisp, tipo, estado) VALUES ('".$_POST['titulo']."','".$_POST['descripcion']."','".$_POST['precio']."','".$type."','".$_POST['cantPersonas']."','".$_POST['semanas']."', 'normal','1')";
 $tmpName = $_FILES['imagen']['tmp_name'];
 $resultado = mysqli_query($con,$sql);
