@@ -24,6 +24,9 @@ li a:hover {
 #exito{
   background-color: #58d68d;
 }
+#delete{
+  background-color: red;
+}
 #pie{
   width: 99%;
 }

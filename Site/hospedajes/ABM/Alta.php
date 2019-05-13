@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
     <title>Home Switch Home Site</title>
     <!--<link rel="shortcut icon" href="favico.ico"/>-->
-    <link type="text/css" rel="stylesheet" href="../../style.css" media="all">
+    <!--<link type="text/css" rel="stylesheet" href="style.css" media="all"> -->
+
+
+
+<link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/landing-page.min.css" rel="stylesheet">
+
+
     </head>
   <body>
-    <div id="contenedor">
-      <div id="encabezado">
-        <h2>Home Switch Home Site - Gestion de Hospedajes - Alta Hospedajes</h2>
-        <p> Bienvenidos a nuestro sitio online </p>
-        <div id="menu">
-          <ul>
-            <li><a href="../../index.php">Home</a></li>
-            <li><a href="login/logIn.php">Iniciar Sesion</a></li>
-            <li><a href="login/singIn.php">Registrarse</a></li>
-            <li><a href="../Index.php">Atras</a></li>
-          </ul>
+    
+      <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+            <a class="navbar-brand" href="../../index.php">Home Switch Home Site</a>
+            <a href="../../index.php">Home</a>
+            <a href="../Index.php">Atras</a>
+            <a class="btn btn-primary" href="#">Sesion</a>
+          
         </div>
-      </div>
       <div id="condenido">
         <h2> Nuevo Hospedaje </h2>
         <form enctype="multipart/form-data" action="services/ServicesAlta.php" method="post">
