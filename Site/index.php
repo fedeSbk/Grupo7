@@ -34,22 +34,6 @@
 <!--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     </head>
   <body>
-<<<<<<< HEAD
-    <div id="contenedor">
-      <div id="encabezado">
-        <h2>Home Switch Home Site</h2>
-        <p> Bienvenidos a nuestro sitio online </p>
-        <div id="menu">
-          <ul>
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="login/logIn.php">Iniciar Sesion</a></li>
-            <li><a href="login/singIn.php">Registrarse</a></li>
-            <li><a href="hospedajes/Index.php">Gestion Hospedajes</a></li>
-	    <li><a href="subastas/index.php">Subastas</a></li>
-          </ul>
-=======
-
-
     <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Home Switch Home Site</a>
@@ -129,7 +113,7 @@
   </section>
 
 <!--
-   Image Showcases 
+   Image Showcases
   <section class="showcase">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
@@ -158,7 +142,7 @@
     </div>
   </section>
 
-   Testimonials 
+   Testimonials
   <section class="testimonials text-center bg-light">
     <div class="container">
       <h2 class="mb-5">What people are saying...</h2>
@@ -212,7 +196,7 @@
     </div>
   </section>
 
-   Footer 
+   Footer
   <footer class="footer bg-light">
     <div class="container">
       <div class="row">
@@ -261,7 +245,7 @@
 
    Bootstrap core JavaScript -->
 
-  
+
 
 
 
@@ -278,6 +262,6 @@
 
       <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
+
   </body>
 </html>
