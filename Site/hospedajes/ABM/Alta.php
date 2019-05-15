@@ -22,53 +22,71 @@
 
   <!-- Custom styles for this template -->
   <link href="../css/landing-page.min.css" rel="stylesheet">
-
-
     </head>
   <body>
-    
       <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-            <a class="navbar-brand" href="../../index.php">Home Switch Home Site</a>
-            <a href="../../index.php">Home</a>
-            <a href="../Index.php">Atras</a>
+      <a class="navbar-brand" href="../../index.php"><img class="logo" title="Home Switch Home" alt="Home Switch Home" src="../../Logos/HSH-Complete.svg" width="200px"></a>
             <a class="btn btn-primary" href="#">Sesion</a>
-          
         </div>
       <div id="condenido">
+        <a href="../Index.php" class="btn btn-info btn-md">
+          <span class="glyphicon glyphicon-chevron-left"></span> Volver al Listado
+        </a>
         <h2> Nuevo Hospedaje </h2>
+        <?php if(isset($_GET['error']))
+{
+  switch ($_GET['error']) {
+    case 1:
+    ?>
+    <script type="text/javascript">
+    alert('No puede ingresar campos vacios!');
+    </script>
+    <?php
+      break;
+    case 2:
+    ?>
+    <script type="text/javascript">
+    alert('Debe ingresar imagen (formato .JPG, .PNG, .SVG, .JPEG)');
+    </script>
+    <?php
+      break;
+
+    case 3:
+    ?>
+    <script type="text/javascript">
+    alert('Ya existe un hospedaje con el mismo nombre, por favor escoja otro');
+    </script>
+    <?php
+      break;
+}
+}
+?>
         <form enctype="multipart/form-data" action="services/ServicesAlta.php" method="post">
-            Ingrese Titulo
-            <br />
-            <input type="text" name="titulo" <?php if (isset($_POST['titulo'])){echo "value='".$_POST['titulo']."'";};?> required />
-            <br />
-            Ingrese descripcion
-            <br />
-            <textarea rows="4" cols="50" name="descripcion" required><?php if (isset($_POST['titulo'])){echo $_POST['descripcion'];};?></textarea>
-            <br />
-            Ingrese precio
-            <br />
-            <input type="text" name="precio" <?php if (isset($_POST['precio'])){echo "value='".$_POST['precio']."'";};?> required />
-            <br />
-            Ingrese Imagen (opcional):
-            <br />
-            <input type="file" name="imagen"/>
-            <br />
-            Ingrese cantidad de Personas:
-            <br />
-            <input type="text" name="cantPersonas" <?php if (isset($_POST['cantPersonas'])){echo "value='".$_POST['cantPersonas']."'";};?> required />
-            <br />
-            Ingrese Fecha de Inicio de Subasta (opcional):
-            <br />
-            <input type="date" name="fechaSubasta" <?php if (isset($_POST['fechaSubasta'])){echo "value='".$_POST['fechaSubasta']."'";};?> />
-            <br />
-            Ingrese cantidad de semanas disponibles (opcional): <input type="number" id="semanas" name="semanas" <?php if (isset($_POST['titulo'])){echo "value='".$_POST['semanas']."'";};?> />
-            <button type="button" class="Semanas">Agregar Semanas</button>
-            <div id="sem"></div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="titulo">Ingrese Titulo</label>
+              <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" required>
+              <label for="cantidad">Ingrese Cantidad de Personas</label>
+              <input type="number" class="form-control" id="cantidad" name="cantPersonas" placeholder="Cantidad de Personas" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="descripcion">Ingrese Descripcion</label>
+              <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" required></textarea>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="imagen" name="imagen" required>
+              <label class="custom-file-label" for="customFile">Seleccione Imagen</label>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="descripcion">Ingrese Cantidad de Semanas (Opcional)</label>
+              <input type="number" class="form-control" id="semanas" name="semanas" placeholder="Cantidad de Semanas">
+              <button type="button" class="btn btn-warning">Agregar Semanas</button>
+            </div>
+            <div id="sem" class"form-group col-md-6"></div>
             <script >
                 const button = document.querySelector("button");
                 const semanas = document.getElementById("semanas");
-
                 button.addEventListener('click', agregarSemanas);
                 function agregarSemanas() {
                   document.getElementById("sem").innerHTML="";
@@ -78,9 +96,11 @@
                   }
                 }
             </script>
-          <input type="submit" value="Terminar">
+            <div class="custom-file">
+              <input type="submit" class="btn btn-success" value="Agregar Hospedaje">
+          </div>
+        </div>
         </form>
-      </div>
       <div id="pie">
         <p> Desarrollado por <strong>FAA</strong> - 2019 - copyrigth</p>
       </div>

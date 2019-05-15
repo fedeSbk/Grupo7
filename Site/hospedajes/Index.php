@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <link rel="apple-touch-icon" sizes="180x180" href="../Logos/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Logos/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Logos/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="../Logos/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -9,7 +15,7 @@
 
     <title>Home Switch Home Site</title>
     <!--<link rel="shortcut icon" href="favico.ico"/>-->
-    <!--<link type="text/css" rel="stylesheet" href="style.css" media="all"> -->
+    <link type="text/css" rel="stylesheet" href="../style.css" media="all">
 
 
 
@@ -28,26 +34,24 @@
   <body>
     <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-            <a class="navbar-brand" href="../">Home Switch Home Site</a>
-            <a href="../index.php">Home</a>
+      <a class="navbar-brand" href="../index.php"><img class="logo" title="Home Switch Home" alt="Home Switch Home" src="../Logos/HSH-Complete.svg" width="200px"></a>
             <a href="ABM/Alta.php">Alta Hospedajes</a>
             <a class="btn btn-primary" href="#">Sesion</a>
         </div>
       </nav>
-
-
-
       <div id="condenido">
-        <h2> Listado de Hospedajes </h2>
-        <table border="1">
-          <tr>
-              <th>Id</th>
-              <th>Imagen</th>
-              <th>Titulo</th>
-              <th>Precio</th>
-              <th>Ver Detalles</th>
-              <th>Eliminar</th>
-          </tr>
+        <h1 class="mb-5">Listado de Hospedajes</h1>
+        <table class="table table">
+         <thead>
+           <tr>
+               <th scope="col">Id</th>
+               <th scope="col">Imagen</th>
+               <th scope="col">Titulo</th>
+               <th scope="col">Precio</th>
+               <th scope="col"></th>
+               <th scope="col"></th>
+           </tr>
+         </thead>
           <?php
           if  (isset($_GET['exito'])){
           ?> <div id="exito">
@@ -64,19 +68,19 @@
           $resultado = mysqli_query($con,$sql);
           while ($rows = mysqli_fetch_array($resultado)){
             if (strpos($rows['imagenData'],'opt')!== false){
-            $name=str_replace('/opt/lampp/htdocs/HomeSwitchHome/Grupo7/Site','',$rows['imagenData']);  
+            $name=str_replace('/opt/lampp/htdocs/HomeSwitchHome/Grupo7/Site','',$rows['imagenData']);
             }
             else{
             $name=str_replace('C:/xampp2/htdocs/Grupo7-Final/Grupo7/Site','',$rows['imagenData']);
              }
               ?>
               <tr>
-                <td><?php echo $rows['idHospedaje'];?></td>
-                <td><?php echo '<img src="..'.$name.'" alt="Imagen'.$rows['titulo'].'" width="150" height="150" />';?></td>
-                <td><?php echo $rows['titulo'];?></td>
-                <td><?php echo $rows['precio'];?></td>
-                <td><?php echo $rows['descripcion'];?></td>
-                <td><a href='ABM/services/ServicesBaja.php?id=<?php echo $rows['idHospedaje'];?>'>Eliminar</a></td>
+                <td class="table-primary"><?php echo $rows['idHospedaje'];?></td>
+                <td class="table-primary"><?php echo '<img src="..'.$name.'" alt="Imagen'.$rows['titulo'].'" width="150" height="150" />';?></td>
+                <td class="table-primary"><?php echo $rows['titulo'];?></td>
+                <td class="table-primary"><?php echo $rows['precio'];?></td>
+                <td class="table-primary"><a class="btn btn-info" href="#">Ver Detalles</a></td>
+                <td class="table-primary"><a class="btn btn-danger" href='ABM/services/ServicesBaja.php?id=<?php echo $rows['idHospedaje'];?>'>Eliminar</a></td>
               </tr>
           <?php
           }

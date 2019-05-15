@@ -33,3 +33,6 @@ li a:hover {
 #pie p{
   text-align: right;
 }
+td.table-info{
+  text-decoration-color: black;
+}
